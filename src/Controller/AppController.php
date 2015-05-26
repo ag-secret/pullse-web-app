@@ -27,6 +27,11 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
+    /**
+     * Api key do google could message para enviar as push notification
+     */
+    public $gcmApiKey = 'AIzaSyCMea5uhilyaOdmJ9G1dE-teHCtOPLOPUw';
+
     public $layout = 'custom';
     
     public $helpers = [

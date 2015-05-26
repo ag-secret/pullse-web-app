@@ -98,7 +98,7 @@
 </div>
 
 <div id="container-tempo" style="<?= ($ad->tipo == 1) ? 'display: none;' : '' ?>">
-	<?= $this->Form->input('tempo', ['help' => 'Colocar valor em segundos', 'default' => 0]); ?>
+	<?= $this->Form->input('tempo', ['help' => 'Valor em segundos', 'default' => 0]); ?>
 </div>
 <?php
 	echo $this->Form->input('ordem', ['default' => 0]);

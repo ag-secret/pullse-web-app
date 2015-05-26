@@ -2,6 +2,8 @@
 
 <?= $this->element('breadcrumb', ['breadcrumb' => $breadcrumb]) ?>
 
+<?= $this->Flash->render() ?>
+
 <?= $this->Html->link('<span class="glyphicon glyphicon-plus"></span> Adicionar usuário',
     ['action' => 'add'],
     [
@@ -10,6 +12,7 @@
     ]) ?>
 
 <br style="clear: both;">
+
 <br>
 
 <table class="table table-bordered table-hover table-striped">

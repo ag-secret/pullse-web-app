@@ -26,6 +26,8 @@
 
 <?= $this->element('breadcrumb') ?>
 
+<?= $this->Flash->render() ?>
+
 <div class="row">
 	<div class="col-md-8">
 		<div style="width: 100%; height: 500px; background-color: #EEE;" id="map"></div>

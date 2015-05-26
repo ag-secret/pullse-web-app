@@ -54,10 +54,24 @@ class EventsController extends AppController
             'conditions' => $conditions,
             'order' => ['Events.data_inicio' => $order]
         ];
-        // Debug($this->paginate($this->Events));
-        // exit();
+
+        /**
+         * Pega o último dia que envio as notificações para os celulares
+         */
+        $data = $this->Events->Clubs->GeneralSettings->find('all', [
+            'fields' => [
+                'GeneralSettings.envio_notificacoes_evento'
+            ],
+            'conditions' => [
+                'GeneralSettings.club_id' => $this->Auth->user('club_id')
+            ]
+        ])
+        ->first();
+
+        $notificacao_ultimo_envio = ($data) ? $data->envio_notificacoes_evento : null;
+
         $this->set('events', $this->paginate($this->Events));
-        $this->set(compact('breadcrumb'));
+        $this->set(compact('breadcrumb', 'notificacao_ultimo_envio'));
     }
 
     /**
@@ -89,7 +103,6 @@ class EventsController extends AppController
                 $this->Flash->success('O evento foi salvo.');
                 return $this->redirect(['action' => 'index']);
             } else {
-                debug($event->errors());
                 $this->Flash->error('O evento não pode ser salvo. Por favor, tente novamente.');
             }
         }

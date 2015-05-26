@@ -4,6 +4,8 @@
 
 <?= $this->element('breadcrumb') ?>
 
+<?= $this->Flash->render() ?>
+
 <?= $this->Form->create($event, ['type' => 'file', 'horizontal' => true, 'novalidate' => true]); ?>
     <?= $this->element('Events/form') ?>
     <?= $this->Form->submit('Salvar alterações', ['bootstrap-type' => 'success']) ?>

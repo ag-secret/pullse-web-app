@@ -2,6 +2,8 @@
 
 <?= $this->element('breadcrumb') ?>
 
+<?= $this->Flash->render() ?>
+
 <div>
     <?= $this->Form->create(null, ['type' => 'get', 'class' => 'form-inline']) ?>
         <input

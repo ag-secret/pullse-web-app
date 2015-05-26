@@ -1,7 +1,8 @@
 <?= $this->assign('title', ' - Editar Usuário') ?>
 
-
 <?= $this->element('breadcrumb', ['breadcrumb' => $breadcrumb]) ?>
+
+<?= $this->Flash->render() ?>
 
 <?php
     echo $this->Form->create($admUser, ['horizontal' => true, 'novalidate' => true]);

@@ -1,0 +1,542 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2015-05-25 17:09+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Template/AdsSettings/add.ctp:2
+#: Template/AdsSettings/index.ctp:2;17
+#: Template/AdsSettings/view.ctp:2
+#: Template/Checkins/add.ctp:2
+#: Template/Checkins/edit.ctp:2
+#: Template/Checkins/index.ctp:2;23
+#: Template/Checkins/view.ctp:2
+#: Template/Clubs/add.ctp:2
+#: Template/Clubs/edit.ctp:2
+#: Template/Clubs/index.ctp:2;24
+#: Template/Clubs/view.ctp:2;73;123
+#: Template/Hearts/add.ctp:2
+#: Template/Hearts/edit.ctp:2
+#: Template/Hearts/index.ctp:2;22
+#: Template/Hearts/view.ctp:2
+#: Template/Messages/add.ctp:2
+#: Template/Messages/edit.ctp:2
+#: Template/Messages/index.ctp:2;21
+#: Template/Messages/view.ctp:2
+#: Template/VipListSubscriptions/add.ctp:2
+#: Template/VipListSubscriptions/edit.ctp:2
+#: Template/VipListSubscriptions/index.ctp:2;21
+#: Template/VipListSubscriptions/view.ctp:2
+msgid "Actions"
+msgstr ""
+
+#: Template/AdsSettings/add.ctp:4
+#: Template/AdsSettings/view.ctp:6
+msgid "List Ads Settings"
+msgstr ""
+
+#: Template/AdsSettings/add.ctp:5
+#: Template/AdsSettings/index.ctp:5
+#: Template/AdsSettings/view.ctp:8
+#: Template/Clubs/add.ctp:5
+#: Template/Clubs/edit.ctp:12
+#: Template/Clubs/index.ctp:5
+#: Template/Clubs/view.ctp:6
+msgid "List Clubs"
+msgstr ""
+
+#: Template/AdsSettings/add.ctp:6
+#: Template/AdsSettings/index.ctp:6
+#: Template/AdsSettings/view.ctp:9
+#: Template/Clubs/add.ctp:4
+#: Template/Clubs/edit.ctp:11
+#: Template/Clubs/index.ctp:4
+#: Template/Clubs/view.ctp:7
+msgid "New Club"
+msgstr ""
+
+#: Template/AdsSettings/add.ctp:12
+msgid "Add Ads Setting"
+msgstr ""
+
+#: Template/AdsSettings/add.ctp:19
+#: Template/Checkins/add.ctp:23
+#: Template/Checkins/edit.ctp:30
+#: Template/Clubs/add.ctp:24
+#: Template/Clubs/edit.ctp:31
+#: Template/Hearts/add.ctp:24
+#: Template/Hearts/edit.ctp:31
+#: Template/Messages/add.ctp:21
+#: Template/Messages/edit.ctp:28
+#: Template/VipListSubscriptions/add.ctp:22
+#: Template/VipListSubscriptions/edit.ctp:29
+msgid "Submit"
+msgstr ""
+
+#: Template/AdsSettings/index.ctp:4
+#: Template/AdsSettings/view.ctp:7
+msgid "New Ads Setting"
+msgstr ""
+
+#: Template/AdsSettings/index.ctp:30
+#: Template/Checkins/index.ctp:40
+#: Template/Clubs/index.ctp:38
+#: Template/Clubs/view.ctp:91;142
+#: Template/Hearts/index.ctp:38
+#: Template/Messages/index.ctp:36
+#: Template/VipListSubscriptions/index.ctp:36
+msgid "View"
+msgstr ""
+
+#: Template/AdsSettings/index.ctp:31
+#: Template/Checkins/index.ctp:41
+#: Template/Clubs/index.ctp:39
+#: Template/Clubs/view.ctp:92;143
+#: Template/Hearts/index.ctp:39
+#: Template/Messages/index.ctp:37
+#: Template/VipListSubscriptions/index.ctp:37
+msgid "Edit"
+msgstr ""
+
+#: Template/AdsSettings/index.ctp:32
+#: Template/Checkins/edit.ctp:6
+#: Template/Checkins/index.ctp:42
+#: Template/Clubs/edit.ctp:6
+#: Template/Clubs/index.ctp:40
+#: Template/Clubs/view.ctp:93;144
+#: Template/Hearts/edit.ctp:6
+#: Template/Hearts/index.ctp:40
+#: Template/Messages/edit.ctp:6
+#: Template/Messages/index.ctp:38
+#: Template/VipListSubscriptions/edit.ctp:6
+#: Template/VipListSubscriptions/index.ctp:38
+msgid "Delete"
+msgstr ""
+
+#: Template/AdsSettings/index.ctp:32
+#: Template/AdsSettings/view.ctp:5
+#: Template/Checkins/edit.ctp:8
+#: Template/Checkins/index.ctp:42
+#: Template/Checkins/view.ctp:5
+#: Template/Clubs/edit.ctp:8
+#: Template/Clubs/index.ctp:40
+#: Template/Clubs/view.ctp:5;93;144
+#: Template/Hearts/edit.ctp:8
+#: Template/Hearts/index.ctp:40
+#: Template/Hearts/view.ctp:5
+#: Template/Messages/edit.ctp:8
+#: Template/Messages/index.ctp:38
+#: Template/Messages/view.ctp:5
+#: Template/VipListSubscriptions/edit.ctp:8
+#: Template/VipListSubscriptions/index.ctp:38
+#: Template/VipListSubscriptions/view.ctp:5
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/AdsSettings/index.ctp:41
+#: Template/Checkins/index.ctp:52
+#: Template/Clubs/index.ctp:50
+#: Template/Hearts/index.ctp:50
+#: Template/Messages/index.ctp:48
+#: Template/VipListSubscriptions/index.ctp:48
+msgid "previous"
+msgstr ""
+
+#: Template/AdsSettings/index.ctp:43
+#: Template/Checkins/index.ctp:54
+#: Template/Clubs/index.ctp:52
+#: Template/Hearts/index.ctp:52
+#: Template/Messages/index.ctp:50
+#: Template/VipListSubscriptions/index.ctp:50
+msgid "next"
+msgstr ""
+
+#: Template/AdsSettings/view.ctp:4
+msgid "Edit Ads Setting"
+msgstr ""
+
+#: Template/AdsSettings/view.ctp:5
+msgid "Delete Ads Setting"
+msgstr ""
+
+#: Template/AdsSettings/view.ctp:16
+msgid "Club"
+msgstr ""
+
+#: Template/AdsSettings/view.ctp:20
+#: Template/Checkins/view.ctp:30
+#: Template/Clubs/view.ctp:34;60;109
+#: Template/Hearts/view.ctp:28
+#: Template/Messages/view.ctp:28
+#: Template/VipListSubscriptions/view.ctp:32
+msgid "Id"
+msgstr ""
+
+#: Template/AdsSettings/view.ctp:22
+msgid "Intervalo Ad"
+msgstr ""
+
+#: Template/AdsSettings/view.ctp:24
+msgid "Intervalo Chk"
+msgstr ""
+
+#: Template/Checkins/add.ctp:4
+#: Template/Checkins/edit.ctp:11
+#: Template/Checkins/index.ctp:4
+#: Template/Checkins/view.ctp:7
+msgid "New Checkin"
+msgstr ""
+
+#: Template/Checkins/add.ctp:5
+#: Template/Checkins/edit.ctp:12
+#: Template/Checkins/index.ctp:5
+#: Template/Checkins/view.ctp:6
+msgid "List Checkins"
+msgstr ""
+
+#: Template/Checkins/add.ctp:6
+#: Template/Checkins/edit.ctp:13
+#: Template/Checkins/index.ctp:6
+#: Template/Checkins/view.ctp:8
+#: Template/Clubs/add.ctp:8
+#: Template/Clubs/edit.ctp:15
+#: Template/Clubs/index.ctp:8
+#: Template/Clubs/view.ctp:10
+#: Template/Messages/add.ctp:6
+#: Template/Messages/edit.ctp:13
+#: Template/Messages/index.ctp:6
+#: Template/Messages/view.ctp:8
+#: Template/VipListSubscriptions/add.ctp:8
+#: Template/VipListSubscriptions/edit.ctp:15
+#: Template/VipListSubscriptions/index.ctp:8
+#: Template/VipListSubscriptions/view.ctp:10
+msgid "List Users"
+msgstr ""
+
+#: Template/Checkins/add.ctp:7
+#: Template/Checkins/edit.ctp:14
+#: Template/Checkins/index.ctp:7
+#: Template/Checkins/view.ctp:9
+#: Template/Clubs/add.ctp:9
+#: Template/Clubs/edit.ctp:16
+#: Template/Clubs/index.ctp:9
+#: Template/Clubs/view.ctp:11
+#: Template/Messages/add.ctp:7
+#: Template/Messages/edit.ctp:14
+#: Template/Messages/index.ctp:7
+#: Template/Messages/view.ctp:9
+#: Template/VipListSubscriptions/add.ctp:9
+#: Template/VipListSubscriptions/edit.ctp:16
+#: Template/VipListSubscriptions/index.ctp:9
+#: Template/VipListSubscriptions/view.ctp:11
+msgid "New User"
+msgstr ""
+
+#: Template/Checkins/add.ctp:8
+#: Template/Checkins/edit.ctp:15
+#: Template/Checkins/index.ctp:8
+#: Template/Checkins/view.ctp:10
+#: Template/Clubs/add.ctp:6
+#: Template/Clubs/edit.ctp:13
+#: Template/Clubs/index.ctp:6
+#: Template/Clubs/view.ctp:8
+#: Template/Hearts/add.ctp:6
+#: Template/Hearts/edit.ctp:13
+#: Template/Hearts/index.ctp:6
+#: Template/Hearts/view.ctp:8
+#: Template/VipListSubscriptions/add.ctp:6
+#: Template/VipListSubscriptions/edit.ctp:13
+#: Template/VipListSubscriptions/index.ctp:6
+#: Template/VipListSubscriptions/view.ctp:8
+msgid "List Events"
+msgstr ""
+
+#: Template/Checkins/add.ctp:9
+#: Template/Checkins/edit.ctp:16
+#: Template/Checkins/index.ctp:9
+#: Template/Checkins/view.ctp:11
+#: Template/Clubs/add.ctp:7
+#: Template/Clubs/edit.ctp:14
+#: Template/Clubs/index.ctp:7
+#: Template/Clubs/view.ctp:9
+#: Template/Hearts/add.ctp:7
+#: Template/Hearts/edit.ctp:14
+#: Template/Hearts/index.ctp:7
+#: Template/Hearts/view.ctp:9
+#: Template/VipListSubscriptions/add.ctp:7
+#: Template/VipListSubscriptions/edit.ctp:14
+#: Template/VipListSubscriptions/index.ctp:7
+#: Template/VipListSubscriptions/view.ctp:9
+msgid "New Event"
+msgstr ""
+
+#: Template/Checkins/add.ctp:15
+msgid "Add Checkin"
+msgstr ""
+
+#: Template/Checkins/edit.ctp:4;22
+#: Template/Checkins/view.ctp:4
+msgid "Edit Checkin"
+msgstr ""
+
+#: Template/Checkins/view.ctp:5
+msgid "Delete Checkin"
+msgstr ""
+
+#: Template/Checkins/view.ctp:20
+#: Template/Messages/view.ctp:20
+#: Template/VipListSubscriptions/view.ctp:22
+msgid "User"
+msgstr ""
+
+#: Template/Checkins/view.ctp:22
+#: Template/Hearts/view.ctp:18
+#: Template/VipListSubscriptions/view.ctp:20
+msgid "Event"
+msgstr ""
+
+#: Template/Checkins/view.ctp:32
+msgid "Lat"
+msgstr ""
+
+#: Template/Checkins/view.ctp:34
+msgid "Lng"
+msgstr ""
+
+#: Template/Checkins/view.ctp:42
+#: Template/Clubs/view.ctp:44;69;118
+#: Template/Hearts/view.ctp:46
+#: Template/Messages/view.ctp:40
+msgid "Created"
+msgstr ""
+
+#: Template/Clubs/add.ctp:15
+msgid "Add Club"
+msgstr ""
+
+#: Template/Clubs/edit.ctp:4;22
+#: Template/Clubs/view.ctp:4
+msgid "Edit Club"
+msgstr ""
+
+#: Template/Clubs/view.ctp:5
+msgid "Delete Club"
+msgstr ""
+
+#: Template/Clubs/view.ctp:20;61;110
+msgid "Name"
+msgstr ""
+
+#: Template/Clubs/view.ctp:22;64
+msgid "Descricao"
+msgstr ""
+
+#: Template/Clubs/view.ctp:24
+msgid "Foto Capa"
+msgstr ""
+
+#: Template/Clubs/view.ctp:26
+msgid "Foto Perfil"
+msgstr ""
+
+#: Template/Clubs/view.ctp:36;72;122
+#: Template/Messages/view.ctp:30
+msgid "Is Active"
+msgstr ""
+
+#: Template/Clubs/view.ctp:46;70;119
+msgid "Modified"
+msgstr ""
+
+#: Template/Clubs/view.ctp:55
+msgid "Related Events"
+msgstr ""
+
+#: Template/Clubs/view.ctp:62
+msgid "Data Inicio"
+msgstr ""
+
+#: Template/Clubs/view.ctp:63
+msgid "Data Fim"
+msgstr ""
+
+#: Template/Clubs/view.ctp:65
+msgid "Imagem Capa"
+msgstr ""
+
+#: Template/Clubs/view.ctp:66
+msgid "Descricao Lista Vip"
+msgstr ""
+
+#: Template/Clubs/view.ctp:67
+msgid "Lista Vip Qtd Masc"
+msgstr ""
+
+#: Template/Clubs/view.ctp:68
+msgid "Lista Vip Qtd Fem"
+msgstr ""
+
+#: Template/Clubs/view.ctp:71;120
+msgid "Club Id"
+msgstr ""
+
+#: Template/Clubs/view.ctp:104
+msgid "Related Users"
+msgstr ""
+
+#: Template/Clubs/view.ctp:111
+msgid "Facebook Uid"
+msgstr ""
+
+#: Template/Clubs/view.ctp:112
+msgid "App Access Token"
+msgstr ""
+
+#: Template/Clubs/view.ctp:113
+msgid "Facebook Access Token"
+msgstr ""
+
+#: Template/Clubs/view.ctp:114
+msgid "Platform"
+msgstr ""
+
+#: Template/Clubs/view.ctp:115
+msgid "Android Gcm Device Regid"
+msgstr ""
+
+#: Template/Clubs/view.ctp:116
+msgid "Dt Nascimento"
+msgstr ""
+
+#: Template/Clubs/view.ctp:117
+#: Template/VipListSubscriptions/view.ctp:24
+msgid "Sexo"
+msgstr ""
+
+#: Template/Clubs/view.ctp:121
+msgid "Email"
+msgstr ""
+
+#: Template/Hearts/add.ctp:4
+#: Template/Hearts/edit.ctp:11
+#: Template/Hearts/index.ctp:4
+#: Template/Hearts/view.ctp:7
+msgid "New Heart"
+msgstr ""
+
+#: Template/Hearts/add.ctp:5
+#: Template/Hearts/edit.ctp:12
+#: Template/Hearts/index.ctp:5
+#: Template/Hearts/view.ctp:6
+msgid "List Hearts"
+msgstr ""
+
+#: Template/Hearts/add.ctp:13
+msgid "Add Heart"
+msgstr ""
+
+#: Template/Hearts/edit.ctp:4;20
+#: Template/Hearts/view.ctp:4
+msgid "Edit Heart"
+msgstr ""
+
+#: Template/Hearts/view.ctp:5
+msgid "Delete Heart"
+msgstr ""
+
+#: Template/Hearts/view.ctp:20
+msgid "Message"
+msgstr ""
+
+#: Template/Hearts/view.ctp:30
+msgid "User Id1"
+msgstr ""
+
+#: Template/Hearts/view.ctp:32
+msgid "User Id2"
+msgstr ""
+
+#: Template/Hearts/view.ctp:34
+msgid "Combination"
+msgstr ""
+
+#: Template/Hearts/view.ctp:36
+msgid "Message Sender"
+msgstr ""
+
+#: Template/Hearts/view.ctp:44
+msgid "Combination Created"
+msgstr ""
+
+#: Template/Messages/add.ctp:4
+#: Template/Messages/edit.ctp:11
+#: Template/Messages/index.ctp:4
+#: Template/Messages/view.ctp:7
+msgid "New Message"
+msgstr ""
+
+#: Template/Messages/add.ctp:5
+#: Template/Messages/edit.ctp:12
+#: Template/Messages/index.ctp:5
+#: Template/Messages/view.ctp:6
+msgid "List Messages"
+msgstr ""
+
+#: Template/Messages/add.ctp:13
+msgid "Add Message"
+msgstr ""
+
+#: Template/Messages/edit.ctp:4;20
+#: Template/Messages/view.ctp:4
+msgid "Edit Message"
+msgstr ""
+
+#: Template/Messages/view.ctp:5
+msgid "Delete Message"
+msgstr ""
+
+#: Template/Messages/view.ctp:18
+msgid "Mensagem"
+msgstr ""
+
+#: Template/Messages/view.ctp:32
+msgid "Is Read"
+msgstr ""
+
+#: Template/VipListSubscriptions/add.ctp:4
+#: Template/VipListSubscriptions/edit.ctp:11
+#: Template/VipListSubscriptions/index.ctp:4
+#: Template/VipListSubscriptions/view.ctp:7
+msgid "New Vip List Subscription"
+msgstr ""
+
+#: Template/VipListSubscriptions/add.ctp:5
+#: Template/VipListSubscriptions/edit.ctp:12
+#: Template/VipListSubscriptions/index.ctp:5
+#: Template/VipListSubscriptions/view.ctp:6
+msgid "List Vip List Subscriptions"
+msgstr ""
+
+#: Template/VipListSubscriptions/add.ctp:15
+msgid "Add Vip List Subscription"
+msgstr ""
+
+#: Template/VipListSubscriptions/edit.ctp:4;22
+#: Template/VipListSubscriptions/view.ctp:4
+msgid "Edit Vip List Subscription"
+msgstr ""
+
+#: Template/VipListSubscriptions/view.ctp:5
+msgid "Delete Vip List Subscription"
+msgstr ""
+

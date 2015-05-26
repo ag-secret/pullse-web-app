@@ -2,6 +2,36 @@
 
 <?= $this->element('breadcrumb') ?>
 
+<?= $this->Flash->render() ?>
+
+<script>
+$(function(){
+    $('#send-notification').click(function(){
+        var $this = $(this);
+        var url = $this.data('ajax-url');
+        var loader = $('#loader-notification');
+
+        if (confirm('Você realmente deseja enviar notificações para todos os seus clientes cadastrados e ativos?')) {
+
+            $this.attr('disabled', true);
+            var currentText = $this.text();
+            $this.text('Enviando...');
+
+            loader.fadeIn(function(){
+                $.getJSON(url, function(result){
+                    loader.fadeOut(function(){
+                        $this.attr('disabled', false);
+                        $this.text(currentText);
+                        alert('Notificações enviadas com sucesso!');
+                        location.reload();
+                    });
+                });
+            });
+        }
+    });
+});
+</script>
+
 <div>
     <?= $this->Form->create(null, ['type' => 'get', 'class' => 'form-inline']) ?>
         <input type="text" name="q" class="form-control" placeholder="Pesquisar por nome" value="<?= $this->request->query('q') ?>">
@@ -31,6 +61,32 @@
 
 <hr>
 
+<div class="alert alert-info clearfix">
+    <?php if ($notificacao_ultimo_envio): ?>
+        Última notificação de "agenda atualizada" <strong>à <?= $this->Time->timeAgoInWords($notificacao_ultimo_envio) ?></strong>.
+    <?php else: ?>
+        Notificação de agenda atualizada nunca enviada.
+    <?php endif ?>
+    <button
+        type="button"
+        id="send-notification"
+        class="btn btn-primary btn-sm pull-right"
+        data-ajax-url="<?= $this->Url->build(['controller' => 'GeneralSettings', 'action' => 'sendNotificacoesEvento', '_ext' => 'json'])?>">
+        <span class="glyphicon glyphicon-send"></span> Enviar notificações
+    </button>
+
+    <div style="display: none;" id="loader-notification">
+        <br style="clear: both;">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+                <span class="sr-only">Loading</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
 <?= $this->Html->link('<span class="glyphicon glyphicon-plus"></span> Adicionar evento',
     ['action' => 'add'],
     [
@@ -39,6 +95,7 @@
     ]) ?>
 <br style="clear: both;">
 <br>
+
 <div class="table-responsive">
     <table class="table table-hover table-striped table-bordered">
         <thead>

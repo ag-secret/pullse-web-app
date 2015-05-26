@@ -51,7 +51,7 @@ Router::addUrlFilter(function ($params, $request) {
 Router::scope('/:club_slug', function ($routes) {
     $routes->connect('/conta/localidade', ['controller' => 'Clubs', 'action' => 'locationSettings']);
     $routes->connect(
-        '/entrar',
+        '/',
         ['controller' => 'AdmUsers', 'action' => 'login']
     );
     $routes->connect(
@@ -71,6 +71,11 @@ Router::scope('/:club_slug/eventos', function ($routes) {
     $routes->connect('/deletar/*', ['controller' => 'Events', 'action' => 'delete']);
 });
 
+Router::scope('/:club_slug/general_settings', function ($routes) {
+    $routes->extensions(['json']);
+    $routes->connect('/send_notificacoes_evento', ['controller' => 'GeneralSettings', 'action' => 'sendNotificacoesEvento']);
+});
+
 Router::scope('/:club_slug/propagandas', function ($routes) {
     $routes->connect('/', ['controller' => 'Ads', 'action' => 'index']);
     $routes->connect('/adicionar', ['controller' => 'Ads', 'action' => 'add']);
@@ -88,6 +93,15 @@ Router::scope('/:club_slug/eventos', function ($routes) {
 
 Router::scope('/:club_slug/clientes', function ($routes) {
     $routes->connect('/', ['controller' => 'Users', 'action' => 'index']);
+});
+
+Router::scope('/:club_slug/notificacoes-push', function ($routes) {
+    $routes->connect('/', ['controller' => 'CustomPushNotifications', 'action' => 'index']);
+    $routes->connect('/criar', ['controller' => 'CustomPushNotifications', 'action' => 'add']);
+    $routes->connect('/editar/*', ['controller' => 'CustomPushNotifications', 'action' => 'edit']);
+    $routes->connect('/delete/*', ['controller' => 'CustomPushNotifications', 'action' => 'delete']);
+    $routes->extensions(['json']);
+    $routes->connect('/enviar/*', ['controller' => 'CustomPushNotifications', 'action' => 'send']);
 });
 
 Router::scope('/:club_slug/usuarios', function ($routes) {

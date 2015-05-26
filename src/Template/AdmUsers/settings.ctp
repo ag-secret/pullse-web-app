@@ -2,6 +2,8 @@
 
 <?= $this->element('breadcrumb') ?>
 
+<?= $this->Flash->render() ?>
+
 <div class="row">
 	<div class="col-md-12">
 		<h4>Dados pessoais</h4>

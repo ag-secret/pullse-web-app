@@ -15,6 +15,8 @@
 
 <hr>
 
+<?= $this->Flash->render() ?>
+
 <?= $this->Html->link('<span class="glyphicon glyphicon-pencil"></span> Configurações de Propaganda',
     [
         'controller' => 'AdsSettings',
@@ -36,14 +38,17 @@
 
 <div class="table-responsive">
     <table class="table table-hover table-striped table-bordered">
-    <!-- <thead>
+    <thead>
         <tr>
             <th style="">
                 <?= $this->Paginator->sort('Propaganda') ?>
             </th>
-            <th style="width: 100px;"></th>
+            <th class="text-center" style="width: 150px">
+                <?= $this->Paginator->sort('ordem') ?>
+            </th>
+            <th style="width: 150px;"></th>
         </tr>
-    </thead> -->
+    </thead>
     <tbody>
     <?php foreach ($ads as $ad): ?>
         <tr>
@@ -71,7 +76,7 @@
                             <?= h($ad->nome) ?>         
                         </h4>
                         <?php if ($ad->tipo === 0): ?>
-                            Duração de <strong> <?= $this->Number->format($ad->tempo) ?> Segundos</strong>
+                            Duração de <strong> <?= $this->Number->format($ad->tempo) ?> Segundo(s)</strong>
                             <br>
                         <?php endif ?>
                         Exibido de <strong><?= h($ad->dt_inicio->format('d/m/y')) ?></strong> até <strong><?= h($ad->dt_fim->format('d/m/y')) ?></strong>
@@ -83,6 +88,13 @@
                         <?php endif ?>
                     </div>
                 </div>
+            </td>
+            <td class="text-center">
+                <h3>
+                    <div class="label label-primary">
+                        <?= $ad->ordem ?>
+                    </div>
+                </h3>
             </td>
             <td class="text-center" style="width: 150px;">
                 <div class="btn-group">

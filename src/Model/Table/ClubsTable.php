@@ -34,6 +34,7 @@ class ClubsTable extends Table
         $this->hasMany('Users', [
             'foreignKey' => 'club_id'
         ]);
+        $this->hasOne('GeneralSettings');
     }
 
     /**

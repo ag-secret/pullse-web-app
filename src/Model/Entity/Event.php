@@ -38,7 +38,8 @@ class Event extends Entity
         'tag_string' => true,
         'vip_list_fem_subscriptions' => true,
         'vip_list_masc_subscriptions' => true,
-        'deleted' => false
+        'deleted' => false,
+        'general_setting' => true
     ];
 
     protected function _getVipListFemSubscriptions()

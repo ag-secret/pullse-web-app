@@ -19,6 +19,14 @@ class SideMenuCell extends Cell
 
     protected $items = [
         [
+            'icon' => 'send',
+            'label'=> 'Notificações push',
+            'url' => [
+                'controller' => 'CustomPushNotifications',
+                'action' => 'index'
+            ]
+        ],
+        [
             'icon' => 'fire',
             'label'=> 'Eventos',
             'url' => [

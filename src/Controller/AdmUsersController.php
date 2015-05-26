@@ -170,6 +170,21 @@ class AdmUsersController extends AppController
     public function login()
     {
         $this->layout = 'login';
+
+        $club = $this->AdmUsers->Clubs->find('all', [
+            'fields' => [
+                'Clubs.id',
+                'Clubs.name'
+            ],
+            'conditions' => [
+                'Clubs.slug' => $this->request->params['club_slug'],
+                'Clubs.is_active' => 1
+            ]
+        ])->first();
+
+        if (!$club) {
+            throw new NotFoundException('Boate inexistente!');
+        }
         
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
@@ -180,7 +195,10 @@ class AdmUsersController extends AppController
                 $this->Flash->loginError('Emai ou senha incorretos','default',[],'auth');
             }
         }
+
+        $this->set(compact('club'));
     }
+
     public function logout()
     {
         return $this->redirect($this->Auth->logout());

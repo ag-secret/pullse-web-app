@@ -2,6 +2,8 @@
 
 <?= $this->element('breadcrumb', ['breadcrumb' => $breadcrumb]) ?>
 
+<?= $this->Flash->render() ?>
+
 <?php
     echo $this->Form->create($admUser, ['horizontal' => true, 'novalidate' => true]);
         echo $this->Form->input('username', ['label' => 'Email', 'type' => 'email']);
