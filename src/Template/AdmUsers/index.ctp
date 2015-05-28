@@ -1,10 +1,12 @@
 <?= $this->assign('title', ' - Usuários') ?>
 
-<?= $this->element('breadcrumb', ['breadcrumb' => $breadcrumb]) ?>
+<?= $this->element('breadcrumb', [
+    'title' => 'Usuários'
+]) ?>
 
 <?= $this->Flash->render() ?>
 
-<?= $this->Html->link('<span class="glyphicon glyphicon-plus"></span> Adicionar usuário',
+<?= $this->Html->link('<span class="glyphicon glyphicon-plus"></span> Criar usuário',
     ['action' => 'add'],
     [
         'escape' => false,
@@ -46,7 +48,7 @@
                     <?= $this->Html->link(
                         '<span class="glyphicon glyphicon-pencil"></span>',
                         ['action' => 'edit', $user->id],
-                        ['escape' => false, 'class' => 'btn btn-default btn-xs']
+                        ['escape' => false]
                     ) ?>
                 </td>
             </tr>

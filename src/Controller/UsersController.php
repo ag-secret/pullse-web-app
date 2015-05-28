@@ -20,10 +20,6 @@ class UsersController extends AppController
      */
     public function index()
     {
-        $breadcrumb = [
-            'parent' => 'Clientes',
-        ];
-
         $conditions = [];
 
         $q = $this->request->query('q');

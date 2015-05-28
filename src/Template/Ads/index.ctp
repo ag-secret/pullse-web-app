@@ -1,6 +1,8 @@
 <?= $this->assign('title',' - Propagandas'); ?>
 
-<?= $this->element('breadcrumb') ?>
+<?= $this->element('breadcrumb', [
+    'title' => 'Propagandas'
+]) ?>
 
 <div>
     <?= $this->Form->create(null, ['type' => 'get', 'class' => 'form-inline']) ?>
@@ -27,7 +29,7 @@
         'class' => 'btn btn-default pull-left'
     ]) ?>
 
-<?= $this->Html->link('<span class="glyphicon glyphicon-plus"></span> Adicionar Propaganda',
+<?= $this->Html->link('<span class="glyphicon glyphicon-plus"></span> Criar Propaganda',
     ['action' => 'add'],
     [
         'escape' => false,
@@ -96,30 +98,18 @@
                     </div>
                 </h3>
             </td>
-            <td class="text-center" style="width: 150px;">
-                <div class="btn-group">
-                    <?= $this->Html->link(
-                        '<span class="glyphicon glyphicon-pencil"></span>',
-                        [
-                            'action' => 'edit',
-                            $ad->id
-                        ],
-                        [
-                            'escape' => false,
-                            'title' => 'Editar',
-                            'class' => 'btn btn-default btn-xs'
-                        ])
-                    ?>
-                    <?= $this->Form->postLink(
-                            $this->Html->icon('remove'),
-                            ['action' => 'delete', $ad->id],
-                            [
-                                'confirm' => 'Você tem certeza que deseja deletar esta propaganda?',
-                                'escape' => false,
-                                'class' => 'btn btn-default btn-xs'
-                            ]
-                    ) ?>
-                </div>
+            <td class="text-center" style="width: 150px;vertical-align: middle;">
+                <?= $this->Html->link('<span class="glyphicon glyphicon-pencil"></span>',
+                    ['action' => 'edit', $ad->id],
+                    ['escape' => false, 'title' => 'Editar']) ?>
+                &nbsp;
+                <?= $this->Form->postLink($this->Html->icon('remove'), [
+                        'action' => 'delete', $ad->id
+                    ],
+                    [
+                        'confirm' => 'Você tem certeza que deseja deletar esta propaganda?',
+                        'escape' => false,
+                    ]) ?>
             </td>
         </tr>
 

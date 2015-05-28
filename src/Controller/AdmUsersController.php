@@ -22,9 +22,6 @@ class AdmUsersController extends AppController
 
     public function settings()
     {
-        $breadcrumb = [
-            'parent' => 'Configurações'
-        ];
 
         $admUser = $this->AdmUsers->get($this->Auth->user('id'));
         $currentPassword = $admUser->password;
@@ -41,7 +38,7 @@ class AdmUsersController extends AppController
             }
         }
 
-        $this->set(compact('breadcrumb', 'admUser'));
+        $this->set(compact('admUser'));
     }
 
     public function _updatePassword($entity, $data, $currentPassword)
@@ -67,9 +64,6 @@ class AdmUsersController extends AppController
      */
     public function index()
     {
-        $breadcrumb = [
-            'parent' => 'Usuários',
-        ];
         $this->paginate = [
             'contain' => ['Clubs'],
             'conditions' => [
@@ -77,8 +71,6 @@ class AdmUsersController extends AppController
             ]
         ];
         $this->set('admUsers', $this->paginate($this->AdmUsers));
-        
-        $this->set(compact('breadcrumb'));
     }
 
     /**
@@ -88,18 +80,6 @@ class AdmUsersController extends AppController
      */
     public function add()
     {
-        $breadcrumb = [
-            'parent' => 'Adicionar Usuário',
-            'children' => [
-                [
-                    'label' => 'Usuários',
-                    'url' => [
-                        'action' => 'index'
-                    ]
-                ]
-            ]
-        ];
-
         $admUser = $this->AdmUsers->newEntity();
 
         if ($this->request->is('post')) {
@@ -115,7 +95,7 @@ class AdmUsersController extends AppController
             }
         }
         
-        $this->set(compact('admUser', 'breadcrumb'));
+        $this->set(compact('admUser'));
     }
 
     /**
@@ -127,23 +107,11 @@ class AdmUsersController extends AppController
      */
     public function edit($id = null)
     {
-        $breadcrumb = [
-            'parent' => 'Adicionar Usuário',
-            'children' => [
-                [
-                    'label' => 'Usuários',
-                    'url' => [
-                        'action' => 'index'
-                    ]
-                ]
-            ]
-        ];
         
         $admUser = $this->AdmUsers->find('all', ['conditions' => [
-                'AdmUsers.id' => $id,
-                'AdmUsers.club_id' => $this->Auth->user('club_id')
-            ]
-        ])->first();
+            'AdmUsers.id' => $id,
+            'AdmUsers.club_id' => $this->Auth->user('club_id')
+        ]])->first();
 
         if (!$admUser) {
             throw new NotFoundException('Usuário não existe!');
@@ -165,7 +133,7 @@ class AdmUsersController extends AppController
             unset($admUser->password);
         }
         $clubs = $this->AdmUsers->Clubs->find('list', ['limit' => 200]);
-        $this->set(compact('admUser', 'breadcrumb'));
+        $this->set(compact('admUser'));
     }
     public function login()
     {

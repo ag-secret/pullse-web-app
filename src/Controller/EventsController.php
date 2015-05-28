@@ -18,11 +18,6 @@ class EventsController extends AppController
      */
     public function index()
     {
-
-        $breadcrumb = [
-            'parent' => 'Eventos',
-        ];
-
         $conditions = [];
         $q = $this->request->query('q');
         if ($q) {
@@ -71,7 +66,7 @@ class EventsController extends AppController
         $notificacao_ultimo_envio = ($data) ? $data->envio_notificacoes_evento : null;
 
         $this->set('events', $this->paginate($this->Events));
-        $this->set(compact('breadcrumb', 'notificacao_ultimo_envio'));
+        $this->set(compact('notificacao_ultimo_envio'));
     }
 
     /**
@@ -81,17 +76,6 @@ class EventsController extends AppController
      */
     public function add()
     {
-        $breadcrumb = [
-            'parent' => 'Adicionar evento',
-            'children' => [
-                [
-                    'label' => 'Eventos',
-                    'url' => [
-                        'action' => 'index'
-                    ]
-                ]
-            ]
-        ];
         $event = $this->Events->newEntity();
 
         if ($this->request->is('post')) {
@@ -109,7 +93,7 @@ class EventsController extends AppController
 
         $tags = $this->Events->Tags->find('list');
 
-        $this->set(compact('event', 'tags', 'breadcrumb'));
+        $this->set(compact('event', 'tags'));
     }
 
     /**
@@ -121,18 +105,6 @@ class EventsController extends AppController
      */
     public function edit($id = null)
     {
-        $breadcrumb = [
-            'parent' => 'Editar evento',
-            'children' => [
-                [
-                    'label' => 'Eventos',
-                    'url' => [
-                        'action' => 'index'
-                    ]
-                ]
-            ]
-        ];
-
         $event = $this->Events->find('all', [
             'contain' => ['Tags'],
             'conditions' => [
@@ -156,7 +128,7 @@ class EventsController extends AppController
                 $this->Flash->error('O evento não pode ser salvo. Pro favor, tente novamente.');
             }
         }
-        $this->set(compact('event', 'breadcrumb'));
+        $this->set(compact('event'));
     }
 
     /**

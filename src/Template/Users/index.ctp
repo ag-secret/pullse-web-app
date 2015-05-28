@@ -1,6 +1,8 @@
 <?= $this->assign('title', ' - Clientes') ?>
 
-<?= $this->element('breadcrumb') ?>
+<?= $this->element('breadcrumb', [
+    'title' => 'Clientes'
+]) ?>
 
 <?= $this->Flash->render() ?>
 

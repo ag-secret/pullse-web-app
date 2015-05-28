@@ -27,6 +27,7 @@ class CustomPushNotificationsController extends AppController
         $users = $this->Users->find('all', [
             'fields' => ['Users.platform', 'Users.push_notification_device_token'],
             'conditions' => [
+                'Users.id' => 20,
                 'Users.club_id' => $this->Auth->user('club_id'),
                 'Users.push_notification_device_token IS NOT' => null
             ]
@@ -65,7 +66,7 @@ class CustomPushNotificationsController extends AppController
             'title' => $notification->title,
             'notId' => $notification->id,
             'bigTextStyle' => 1,
-            'type' => 'custom',
+            'type' => 'notificacao',
             'collapse_key' => $notification->id
         ]);
 
@@ -118,24 +119,18 @@ class CustomPushNotificationsController extends AppController
      */
     public function add()
     {
-        $breadcrumb = [
-            'parent' => 'Adicionar notificação',
-            'children' => [
-                [
-                    'label' => 'Notificações Push',
-                    'url' => [
-                        'action' => 'index'
-                    ]
-                ]
-            ]
-        ];
         $customPushNotification = $this->CustomPushNotifications->newEntity();
+
         if ($this->request->is('post')) {
 
-            $customPushNotification = $this->CustomPushNotifications->patchEntity($customPushNotification, $this->request->data);
+            $customPushNotification = $this
+                ->CustomPushNotifications
+                ->patchEntity($customPushNotification, $this->request->data);
+
             $customPushNotification->club_id = $this->Auth->user('club_id');
 
             $customPushNotification->accessible('last_sended', false);
+
             if ($this->CustomPushNotifications->save($customPushNotification)) {
                 $this->Flash->success('A notificação foi salva com sucesso.');
                 return $this->redirect(['action' => 'index']);
@@ -143,8 +138,8 @@ class CustomPushNotificationsController extends AppController
                 $this->Flash->error('A notificação não pode ficar salva. Por favor, tente novamente.');
             }
         }
-        $clubs = $this->CustomPushNotifications->Clubs->find('list', ['limit' => 200]);
-        $this->set(compact('customPushNotification', 'clubs', 'breadcrumb'));
+
+        $this->set(compact('customPushNotification'));
     }
 
     /**
@@ -156,20 +151,8 @@ class CustomPushNotificationsController extends AppController
      */
     public function edit($id = null)
     {
-        $breadcrumb = [
-            'parent' => 'Adicionar notificação',
-            'children' => [
-                [
-                    'label' => 'Notificações Push',
-                    'url' => [
-                        'action' => 'index'
-                    ]
-                ]
-            ]
-        ];
-        $customPushNotification = $this->CustomPushNotifications->get($id, [
-            'contain' => []
-        ]);
+        $customPushNotification = $this->CustomPushNotifications->get($id);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $customPushNotification = $this->CustomPushNotifications->patchEntity($customPushNotification, $this->request->data);
 
@@ -182,8 +165,7 @@ class CustomPushNotificationsController extends AppController
                 $this->Flash->error('A notificação não pode ser salva. Por favor, tente novamente.');
             }
         }
-        $clubs = $this->CustomPushNotifications->Clubs->find('list', ['limit' => 200]);
-        $this->set(compact('customPushNotification', 'clubs', 'breadcrumb'));
+        $this->set(compact('customPushNotification'));
     }
 
     /**

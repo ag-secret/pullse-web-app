@@ -1,30 +1,18 @@
 <?php 
 	echo $this->assign('title', ' - Configurações de localização');
 
-	echo $this->Html->script('http://maps.google.com/maps/api/js?libraries=places&sensor=false&amp;language=pt-br',
+	echo $this->Html->script([
+		'http://maps.google.com/maps/api/js?libraries=places&sensor=false&amp;language=pt-br',
+		'../components/jquery-ui/themes/smoothness/jquery-ui.min',
+		'../components/gmap3/dist/gmap3.min',
+		'../components/jquery-ui/jquery-ui.min',
+		'../components/geocomplete/jquery.geocomplete.min',
+		'Clubs/config'],
 		['inline' => false]
 	);
-	
-	echo $this->Html->css('../components/jquery-ui/themes/smoothness/jquery-ui.min',
-		['inline' => false]
-	);
-
-	echo $this->Html->script('../components/gmap3/dist/gmap3.min',
-		['inline' => false]
-	);
-
-	echo $this->Html->script('../components/jquery-ui/jquery-ui.min',
-		['inline' => false]
-	);
-
-	echo $this->Html->script('../components/geocomplete/jquery.geocomplete.min',
-		['inline' => false]
-	);
-
-	echo $this->Html->script('Clubs/config', ['inline' => false]);
 ?>
 
-<?= $this->element('breadcrumb') ?>
+<?= $this->element('breadcrumb', ['title' => 'Configurações de localidade']) ?>
 
 <?= $this->Flash->render() ?>
 
@@ -56,7 +44,7 @@
 				echo $this->Form->input('lng', ['type' => 'hidden']);
 				echo $this->Form->input('raio', ['default' => 10, 'type' => 'hidden']);
 				echo $this->Form->input('map_zoom', ['type' => 'hidden']);
-				echo $this->Form->submit('Salvar alterações', ['bootstrap-type' => 'success','class' => 'btn-block']);
+				echo $this->Form->submit('Salvar configurações', ['bootstrap-type' => 'success','class' => 'btn-block']);
 			echo $this->Form->end();
 
 		?>

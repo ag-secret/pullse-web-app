@@ -33,10 +33,6 @@ class AdsController extends AppController
      */
     public function index()
     {
-        $breadcrumb = [
-            'parent' => 'Propagandas',
-        ];
-
         $conditions = [];
 
         $q = $this->request->query('q');
@@ -50,25 +46,8 @@ class AdsController extends AppController
         $this->paginate = [
             'conditions' => $conditions
         ];
+
         $this->set('ads', $this->paginate($this->Ads));
-
-        $this->set(compact('breadcrumb'));
-    }
-
-    /**
-     * View method
-     *
-     * @param string|null $id Ad id.
-     * @return void
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $ad = $this->Ads->get($id, [
-            'contain' => []
-        ]);
-        $this->set('ad', $ad);
-        $this->set('_serialize', ['ad']);
     }
 
     /**
@@ -78,17 +57,6 @@ class AdsController extends AppController
      */
     public function add()
     {
-        $breadcrumb = [
-            'parent' => 'Adicionar propaganda',
-            'children' => [
-                [
-                    'label' => 'Propagandas',
-                    'url' => [
-                        'action' => 'index'
-                    ]
-                ]
-            ]
-        ];
 
         $ad = $this->Ads->newEntity();
         if ($this->request->is('post')) {
@@ -100,13 +68,10 @@ class AdsController extends AppController
                 $this->Flash->success('A propaganda foi salva.');
                 return $this->redirect(['action' => 'index']);
             } else {
-                // Debug($ad->errors());
-                // exit();
                 $this->Flash->error('A propaganda não pode ser salva. Por Favor, tente novamente.');
             }
         }
-        $this->set(compact('ad', 'breadcrumb'));
-        $this->set('_serialize', ['ad']);
+        $this->set(compact('ad'));
     }
 
     /**
@@ -118,18 +83,6 @@ class AdsController extends AppController
      */
     public function edit($id = null)
     {
-        $breadcrumb = [
-            'parent' => 'Editar propaganda',
-            'children' => [
-                [
-                    'label' => 'Propagandas',
-                    'url' => [
-                        'action' => 'index'
-                    ]
-                ]
-            ]
-        ];
-
         $ad = $this->Ads->find('all', [
             'contain' => [],
             'conditions' => [
@@ -158,8 +111,7 @@ class AdsController extends AppController
                 $this->Flash->error('A propaganda não pode ser salva. Por favor, tente novamente.');
             }
         }
-        $this->set(compact('ad', 'breadcrumb'));
-        $this->set('_serialize', ['ad']);
+        $this->set(compact('ad'));
     }
 
     /**

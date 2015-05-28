@@ -1,36 +1,10 @@
 <?= $this->assign('title',' - Eventos'); ?>
 
-<?= $this->element('breadcrumb') ?>
+<?= $this->Html->script('Events/index', ['inline' => false]) ?>
+
+<?= $this->element('breadcrumb', ['title' => 'Eventos']) ?>
 
 <?= $this->Flash->render() ?>
-
-<script>
-$(function(){
-    $('#send-notification').click(function(){
-        var $this = $(this);
-        var url = $this.data('ajax-url');
-        var loader = $('#loader-notification');
-
-        if (confirm('Você realmente deseja enviar notificações para todos os seus clientes cadastrados e ativos?')) {
-
-            $this.attr('disabled', true);
-            var currentText = $this.text();
-            $this.text('Enviando...');
-
-            loader.fadeIn(function(){
-                $.getJSON(url, function(result){
-                    loader.fadeOut(function(){
-                        $this.attr('disabled', false);
-                        $this.text(currentText);
-                        alert('Notificações enviadas com sucesso!');
-                        location.reload();
-                    });
-                });
-            });
-        }
-    });
-});
-</script>
 
 <div>
     <?= $this->Form->create(null, ['type' => 'get', 'class' => 'form-inline']) ?>
@@ -87,7 +61,7 @@ $(function(){
 
 <hr>
 
-<?= $this->Html->link('<span class="glyphicon glyphicon-plus"></span> Adicionar evento',
+<?= $this->Html->link('<span class="glyphicon glyphicon-plus"></span> Criar evento',
     ['action' => 'add'],
     [
         'escape' => false,
@@ -173,31 +147,25 @@ $(function(){
                             </span>
                         </h5>
                     </td>
-                    <td class="text-center">
-                        <div class="btn-group">
-                            <?= $this->Html->link(
-                                '<span class="glyphicon glyphicon-pencil"></span>',
+                    <td class="text-center" style="vertical-align: middle;">
+                        <?= $this->Html->link('<span class="glyphicon glyphicon-pencil"></span>', [
+                            'controller' => 'Events',
+                            'action' => 'edit',
+                            $event->id
+                        ],
+                        [
+                            'escape' => false,
+                            'title' => 'Editar',
+                        ])?>
+                        &nbsp;
+                        <?= $this->Form->postLink(
+                                $this->Html->icon('remove'),
+                                ['action' => 'delete', $event->id],
                                 [
-                                    'controller' => 'Events',
-                                    'action' => 'edit',
-                                    $event->id
-                                ],
-                                [
+                                    'confirm' => 'Você tem certeza que deseja deletar este evento?',
                                     'escape' => false,
-                                    'title' => 'Editar',
-                                    'class' => 'btn btn-default btn-xs'
-                                ])
-                            ?>
-                            <?= $this->Form->postLink(
-                                    $this->Html->icon('remove'),
-                                    ['action' => 'delete', $event->id],
-                                    [
-                                        'confirm' => 'Você tem certeza que deseja deletar este evento?',
-                                        'escape' => false,
-                                        'class' => 'btn btn-default btn-xs'
-                                    ]
-                            ) ?>
-                        </div>
+                                ]
+                        ) ?>
                     </td>
                 </tr>
             <?php endforeach ?>

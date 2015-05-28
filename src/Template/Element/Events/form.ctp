@@ -132,13 +132,13 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-2">
-                    <?= $this->Form->day('lista_vip_data_inicio', ['label' => false, 'class' => 'form-control']) ?>          
+                    <?= $this->Form->day('lista_vip_dt_inicio', ['label' => false, 'class' => 'form-control']) ?>          
                 </div>
                 <div class="col-md-3">
-                    <?= $this->Form->month('lista_vip_data_inicio', ['label' => false, 'class' => 'form-control']) ?>          
+                    <?= $this->Form->month('lista_vip_dt_inicio', ['label' => false, 'class' => 'form-control']) ?>          
                 </div>
                 <div class="col-md-3">
-                    <?= $this->Form->year('lista_vip_data_inicio', ['label' => false, 'class' => 'form-control']) ?>          
+                    <?= $this->Form->year('lista_vip_dt_inicio', ['label' => false, 'class' => 'form-control']) ?>          
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@
 <div class="form-group">
     <label for="" class="control-label col-md-2">Horário de Início</label>    
     <div class="col-md-8">
-    <?= $this->Form->input('lista_vip_data_inicio', [
+    <?= $this->Form->input('lista_vip_dt_inicio', [
         'type' => 'time', 'label' => false, 'class' => 'form-control'
     ]) ?>
     </div>
@@ -158,13 +158,13 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-2">
-                    <?= $this->Form->day('lista_vip_data_fim', ['label' => false, 'class' => 'form-control']) ?>          
+                    <?= $this->Form->day('lista_vip_dt_fim', ['label' => false, 'class' => 'form-control']) ?>          
                 </div>
                 <div class="col-md-3">
-                    <?= $this->Form->month('lista_vip_data_fim', ['label' => false, 'class' => 'form-control']) ?>          
+                    <?= $this->Form->month('lista_vip_dt_fim', ['label' => false, 'class' => 'form-control']) ?>          
                 </div>
                 <div class="col-md-3">
-                    <?= $this->Form->year('lista_vip_data_fim', ['label' => false, 'class' => 'form-control']) ?>          
+                    <?= $this->Form->year('lista_vip_dt_fim', ['label' => false, 'class' => 'form-control']) ?>          
                 </div>
             </div>
         </div>
@@ -173,7 +173,7 @@
     <div class="form-group">
         <label for="" class="control-label col-md-2">Horário de Término</label>    
         <div class="col-md-8">
-        <?= $this->Form->input('lista_vip_data_fim', [
+        <?= $this->Form->input('lista_vip_dt_fim', [
             'type' => 'time', 'label' => false, 'class' => 'form-control'
         ]) ?>
         </div>

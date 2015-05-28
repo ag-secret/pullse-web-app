@@ -13,8 +13,8 @@
         width: 25%!important;
     }
     .col-main{
-        margin-left: 25%!important;
-        width: 75%!important;
+        margin-left: 28%!important;
+        width: 72%!important;
     }
 }
 @media(min-width:992px){ /*MD*/
@@ -22,8 +22,8 @@
         width: 18%!important;
     }
     .col-main{
-        margin-left: 18%!important;
-        width: 82%!important;
+        margin-left: 20%!important;
+        width: 80%!important;
     }
 }
 @media(min-width:1200px){ /*LG*/
@@ -127,4 +127,21 @@ body
 {
     /*border: 0!important;*/
     background-color: #e74c3c!important;
+}
+
+
+/*BREADCRUMB*/
+ul.breadcrumb {
+    margin: 20px 0 50px 0;
+    padding: 0;
+    padding-bottom: 15px;
+    background: none;
+    border-bottom: #EEE 1px solid;
+    border-radius: 0;
+}
+.breadcrumb li.last{
+    font-size: 22px;
+}
+.breadcrumb > li + li:before {
+  font-size: 14px;
 }

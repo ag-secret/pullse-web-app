@@ -20,18 +20,6 @@ class AdsSettingsController extends AppController
      */
     public function edit()
     {
-        $breadcrumb = [
-            'parent' => 'Configurações de Propaganda',
-            'children' => [
-                [
-                    'label' => 'Propagandas',
-                    'url' => [
-                        'controller' => 'Ads',
-                        'action' => 'index'
-                    ]
-                ]
-            ]
-        ];
         $adsSetting = $this->AdsSettings->find('all', [
             'conditions' => [
                 'AdsSettings.club_id' => $this->Auth->user('club_id')
@@ -47,6 +35,6 @@ class AdsSettingsController extends AppController
                 $this->Flash->error('As configurações da propaganda não foram salvas. Por favor, tente novamente.');
             }
         }
-        $this->set(compact('adsSetting', 'breadcrumb'));
+        $this->set(compact('adsSetting'));
     }
 }

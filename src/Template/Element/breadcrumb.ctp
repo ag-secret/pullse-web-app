@@ -1,11 +1,11 @@
 <h3>
     <small>
-    	<?php if (!empty($breadcrumb['children'])): ?>
-    		<?php foreach ($breadcrumb['children'] as $key => $item): ?>
-	            <?= $this->Html->link($item['label'], $item['url']) ?> / 
+    	<?php if (!empty($crumbs)): ?>
+    		<?php foreach ($crumbs as $crumb): ?>
+	            <?= $this->Html->link($crumb[0], $crumb[1]) ?> / 
 	        <?php endforeach ?>
     	<?php endif ?>
     </small>
-    <?= $breadcrumb['parent'] ?>
+    <?= $title ?>
 </h3>
 <hr>

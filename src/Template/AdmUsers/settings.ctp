@@ -1,6 +1,8 @@
 <?= $this->assign('title', ' - Configurações da conta') ?>
 
-<?= $this->element('breadcrumb') ?>
+<?= $this->element('breadcrumb', [
+    'title' => 'Configurações de Conta'
+]) ?>
 
 <?= $this->Flash->render() ?>
 
